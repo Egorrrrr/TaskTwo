@@ -8,8 +8,8 @@ import java.util.List;
 public class AppConfig {
     @Bean("fileDictionarySearcher")
     @Scope("prototype")
-    public Dictionary createFileDictionary(List<Path> paths) throws IOException {
-        return new DictionaryFileSearch(paths);
+    public DictionaryAccessor createFileDictionary(List<Path> paths) throws IOException {
+        return new DictionaryAccessorFileSearch(paths);
     }
     @Bean("consoleDictionary")
     @Scope("prototype")

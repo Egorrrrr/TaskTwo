@@ -3,15 +3,18 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class ConsoleDictionary {
+public class ConsoleDictionary implements DictionaryInterface {
 
-    private Dictionary dict;
+    private DictionaryAccessor dict;
     private String langSelected;
     BufferedReader reader;
-    public ConsoleDictionary(Dictionary dict) {
-        this.dict = dict;
+    public ConsoleDictionary(DictionaryAccessor da) {
+        this.dict = da;
+
     }
+    @Override
     public void start() throws IOException {
+        this.dict = dict;
         reader = new BufferedReader(
                 new InputStreamReader(System.in));
         selectDict(reader);
@@ -105,11 +108,11 @@ public class ConsoleDictionary {
 
 
     }
-    public Dictionary getDict() {
+    public DictionaryAccessor getDict() {
         return dict;
     }
 
-    public void setDict(Dictionary dict) {
+    public void setDict(DictionaryAccessor dict) {
         this.dict = dict;
     }
 }

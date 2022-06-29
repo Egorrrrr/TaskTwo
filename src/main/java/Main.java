@@ -12,7 +12,7 @@ public class Main {
         List<Path> paths = new ArrayList<>();
         paths.add(Path.of("dict.txt"));
         paths.add(Path.of("dict_two.txt"));
-        ConsoleDictionary dict = (ConsoleDictionary) applicationContext.getBean("consoleDictionary", paths);
+        DictionaryInterface dict = (DictionaryInterface) applicationContext.getBean("consoleDictionary", paths);
         dict.start();
     }
 }

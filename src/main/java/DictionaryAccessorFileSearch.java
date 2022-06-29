@@ -7,10 +7,10 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class DictionaryFileSearch implements Dictionary {
+public class DictionaryAccessorFileSearch implements DictionaryAccessor {
     private HashMap<String, String> dictionaries;
 
-    public DictionaryFileSearch(String path) throws IOException {
+    public DictionaryAccessorFileSearch(String path) throws IOException {
         Path path_object = Path.of(path);
         if (!Files.exists(path_object)) {
             new File(path).createNewFile();
@@ -24,7 +24,7 @@ public class DictionaryFileSearch implements Dictionary {
     {
         return iStringToCheck.matches("^[a-zA-Z]+$");
     }
-    public DictionaryFileSearch(List<Path> paths) throws IOException {
+    public DictionaryAccessorFileSearch(List<Path> paths) throws IOException {
         dictionaries = new HashMap<>();
         for (Path path : paths
         ) {
