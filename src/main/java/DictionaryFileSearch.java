@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class DictionaryFileSearch implements DictionaryInterface {
+public class DictionaryFileSearch implements Dictionary {
     private HashMap<String, String> dictionaries;
 
     public DictionaryFileSearch(String path) throws IOException {

@@ -1,15 +1,14 @@
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class ConsoleDictionary {
 
-    private DictionaryInterface dict;
+    private Dictionary dict;
     private String langSelected;
     BufferedReader reader;
-    public ConsoleDictionary(DictionaryInterface dict) {
+    public ConsoleDictionary(Dictionary dict) {
         this.dict = dict;
     }
     public void start() throws IOException {
@@ -106,11 +105,11 @@ public class ConsoleDictionary {
 
 
     }
-    public DictionaryInterface getDict() {
+    public Dictionary getDict() {
         return dict;
     }
 
-    public void setDict(DictionaryInterface dict) {
+    public void setDict(Dictionary dict) {
         this.dict = dict;
     }
 }
